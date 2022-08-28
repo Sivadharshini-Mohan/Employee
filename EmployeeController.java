@@ -34,68 +34,68 @@ public class EmployeeController {
      */
     public void choiceSelection() {
         for(;;){
-        logger.info("\n press 1 to create trainer detail \n press 2 to create trainee detail \n press 3 to display all employees"
-            + " \n press 4 to display employee \n press 5 to update employee detail \n press 6 to delete employee detail" );
-        int userChoice = scanner.nextInt();
+            logger.info("\n press 1 to create trainer detail \n press 2 to create trainee detail \n press 3 to display all employees"
+                + " \n press 4 to display employee \n press 5 to update employee detail \n press 6 to delete employee detail" );
+            int userChoice = scanner.nextInt();
        
-        switch(userChoice){
-            case 1 :
-                try {
-                    createEmployee(Constants.TRAINER);
-                } catch(CustomException exception) {
-                    logger.info(exception.getMessage());
-                }
-                break;
+            switch(userChoice){
+                case 1 :
+                   try {
+                        createEmployee(Constants.TRAINER);
+                   } catch(CustomException exception) {
+                        logger.info(exception.getMessage());
+                   }
+                   break;
 
-            case 2 :
-                try {
-                    createEmployee(Constants.TRAINEE);
-                } catch(CustomException exception) {
-                    logger.info(exception.getMessage());
-                }
-                break;
+                case 2 :
+                    try {
+                       createEmployee(Constants.TRAINEE);
+                    } catch(CustomException exception) {
+                        logger.info(exception.getMessage());
+                    }
+                    break;
 
-            case 3 :
-                try {
-                    logger.info("\n Select role: \n press 1 for trainer \n press 2 for trainee");
-                    int employeeRole = scanner.nextInt();
-                    displayEmployees(employeeRole);
-                } catch(CustomException exception) {
-                    logger.info(exception.getMessage());
-                }
-                break;
+                case 3 :
+                    try {
+                        logger.info("\n Select role: \n press 1 for trainer \n press 2 for trainee");
+                        int employeeRole = scanner.nextInt();
+                        displayEmployees(employeeRole);
+                    } catch(CustomException exception) {
+                        logger.info(exception.getMessage());
+                    }
+                    break;
 
-            case 4 :
-                try {
-                    logger.info(" Enter employee id which employee detail you want to show: ");
-                    int employeeId = scanner.nextInt();
-                    displayEmployee(employeeId);
-                } catch(CustomException exception) {
-                    logger.info(exception.getMessage());
-                }
-                break;
+                case 4 :
+                    try {
+                        logger.info(" Enter employee id which employee detail you want to show: ");
+                        int employeeId = scanner.nextInt();
+                        displayEmployee(employeeId);
+                    } catch(CustomException exception) {
+                        logger.info(exception.getMessage());
+                    }
+                    break;
             
-            case 5 :
-                try {
-                    updateEmployee();
-                } catch(CustomException exception) {
-                    logger.info(exception.getMessage());
-                } 
-                break;
+                case 5 :
+                    try {
+                        updateEmployee();
+                    } catch(CustomException exception) {
+                        logger.info(exception.getMessage());
+                    } 
+                    break;
 
-           case 6 :
-               try {
-                    deleteEmployee();
-                } catch(CustomException exception) {
-                    logger.info(exception.getMessage());
-                } 
-                break;          
+                case 6 :
+                   try {
+                        deleteEmployee();
+                    } catch(CustomException exception) {
+                        logger.info(exception.getMessage());
+                    } 
+                    break;          
 
-            default :
-                System. exit(0);
+                default :
+                    System. exit(0);
+            }
         }
-    }
-}  
+    }  
 
     /**
      * <p>
